@@ -17,6 +17,13 @@ This Python script detects faces in images, crops the face region with additiona
 You can install the required packages using pip:
 
 ```bash
-pip install opencv-python pillow
+pip install opencv-python pillow```
 
 
+### Usage
+Place your images in a folder. Supported formats are .png, .jpg, .jpeg, .bmp, and .tiff.
+
+Update the paths: Modify the input_folder and output_folder variables in the script to point to your image folder and desired output folder, respectively.
+
+```Run the script:
+python face_cropper.py```
