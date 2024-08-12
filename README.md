@@ -1,4 +1,4 @@
-# Face Detection and Cropping Script
+# Face Detection and Passport Photo
 
 This script automates the detection and cropping of faces from images in a specified directory. It uses OpenCV for face and eye detection and PIL for resizing the cropped image to passport size.
 
