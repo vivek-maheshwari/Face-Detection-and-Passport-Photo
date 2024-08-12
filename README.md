@@ -1,29 +1,51 @@
 # Face Detection and Cropping Script
 
-This Python script detects faces in images, crops the face region with additional space for shoulders, and resizes the cropped image to a passport-size photo. The processed images are then saved to the specified output directory.
+This script automates the detection and cropping of faces from images in a specified directory. It uses OpenCV for face and eye detection and PIL for resizing the cropped image to passport size.
 
 ## Features
-- **Face Detection:** Utilizes OpenCV's Haar cascades to detect faces and ensure at least two eyes are present in the detected face.
-- **Cropping:** Crops the face region with additional buffers on all sides to include shoulders.
-- **Resizing:** Resizes the cropped image to passport-size dimensions (826x1026 pixels).
-- **Batch Processing:** Processes all images in a specified input folder and saves the results in the output folder.
 
-## Requirements
+- Automatically detects faces with two eyes in an image.
+- Crops the face along with shoulders and resizes it to passport size (826x1026 pixels).
+- Processes all supported image formats (`.png`, `.jpg`, `.jpeg`, `.bmp`, `.tiff`) in a directory.
+- Saves the cropped images to a specified output directory.
 
-- Python 3.x
-- OpenCV
-- Pillow
+## Usage
 
-You can install the required packages using pip:
+### Prerequisites
+
+- Python 3.x installed on your system.
+- Required libraries (`opencv-python` and `Pillow`) installed. You can install these using pip:
+
+  ```bash
+  pip install opencv-python Pillow
+  ```
+
+### Setup
+
+1. Clone the repository or download the script (`face_cropper.py`) to your local machine.
+
+2. Ensure that the necessary Haar Cascade XML files for face and eye detection (`haarcascade_frontalface_default.xml` and `haarcascade_eye.xml`) are available in the `cv2` data directory.
+
+3. Open a terminal or command prompt.
+
+4. Navigate to the directory containing `face_cropper.py`.
+
+### Execution
+
+Replace `path/to/input/folder` and `path/to/output/folder` in the script with the actual paths to your input and output directories.
 
 ```bash
-pip install opencv-python pillow```
+python face_cropper.py
+```
 
+### Output
 
-### Usage
-Place your images in a folder. Supported formats are .png, .jpg, .jpeg, .bmp, and .tiff.
+After execution, the script will save the cropped passport-size photos in the specified output directory.
 
-Update the paths: Modify the input_folder and output_folder variables in the script to point to your image folder and desired output folder, respectively.
+## Notes
 
-```Run the script:
-python face_cropper.py```
+- Ensure you have appropriate permissions to read from the input folder and write to the output folder.
+- The script will only crop faces where two eyes are detected.
+- Back up your images before running the script, especially if the images are critical.
+
+Feel free to customize the script according to your needs and preferences. If you encounter any issues or have suggestions for improvement, please feel free to create an issue or contribute to the development.
